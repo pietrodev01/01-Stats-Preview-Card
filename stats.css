@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+/********** Fonts ********** */
+
+* {
+  color: white;
+}
+
+h1.title,
+.number {
+  font-family: "inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.number {
+  margin: 0;
+  font-size: 20px;
+}
+
+.purple {
+  color: hsl(277, 64%, 61%);
+}
+
+.benefits,
+.desc {
+  font-family: "laxend deca", sans-serif;
+  font-size: 16px;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.benefits {
+  line-height: 160%;
+}
+
+.desc {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+/********** Card ********** */
+
+.root-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+}
+
+body {
+  background-color: hsl(233, 47%, 7%);
+}
+
+.flex-container {
+  max-width: 1110px;
+  display: flex;
+}
+
+.text-container {
+  background-color: hsl(244, 38%, 16%);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  max-width: 400px;
+}
+
+.benefits,
+.items-container {
+  max-width: 374px;
+}
+
+.items-container {
+  display: flex;
+  /* border: 2px solid cyan; */
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsla(277, 64%, 61%, 0.5); /* semi-transparent purple */
+  z-index: 1;
+  pointer-events: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 750px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .img-container {
+    order: 1;
+  }
+
+  .text-container {
+    order: 2;
+    text-align: center;
+  }
+
+  .items-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+  }
+
+  img {
+    content: url(images/image-header-mobile.jpg);
+  }
+}
